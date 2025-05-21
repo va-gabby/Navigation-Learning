@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>卡尔曼滤波公式演示</title>
+  <!-- 引入 MathJax 用于渲染公式 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<h2>卡尔曼滤波：最小二乘意义</h2>
+
+<p>以下是带有数学公式的内容：</p>
+
+<p>每一个分量的二阶矩都达到最小：</p>
+
+$$
+\mathrm{E}\left[\left(\tilde{X}_k^{(1)}\right)^2\right]
++ \mathrm{E}\left[\left(\tilde{X}_k^{(2)}\right)^2\right]
++ \cdots +
+\mathrm{E}\left[\left(\tilde{X}_k^{(n)}\right)^2\right] = \min
+$$
+
+<p>即：</p>
+
+$$
+\mathrm{E}\left[\tilde{\boldsymbol{X}}_k^\mathrm{T} \tilde{\boldsymbol{X}}_k\right] = \min
+$$
+
+<p>用矩阵形式表示协方差矩阵：</p>
+
+$$
+\mathrm{E}\left[\tilde{\boldsymbol{X}}_k \tilde{\boldsymbol{X}}_k^{\mathrm{T}}\right] =
+\begin{bmatrix}
+\mathrm{E}[\tilde{X}_k^{(1)}\tilde{X}_k^{(1)}] & \cdots & \mathrm{E}[\tilde{X}_k^{(1)}\tilde{X}_k^{(n)}] \\\\
+\vdots & \ddots & \vdots \\\\
+\mathrm{E}[\tilde{X}_k^{(n)}\tilde{X}_k^{(1)}] & \cdots & \mathrm{E}[\tilde{X}_k^{(n)}\tilde{X}_k^{(n)}]
+\end{bmatrix}
+$$
+
+<p>我们只关注对角线上的元素，即矩阵的迹：</p>
+
+$$
+\operatorname{tr}(\boldsymbol{P}_k)
+= \operatorname{tr}\left(\mathrm{E}\left[\tilde{\boldsymbol{X}}_k \tilde{\boldsymbol{X}}_k^{\mathrm{T}}\right]\right)
+= \min
+$$
+
+</body>
+</html>
